@@ -4,18 +4,13 @@ pipeline {
     agent none
 
     stages {
-        stage("Install Dependencies") {
-            steps {
-                sh 'install npm'
-            }
-        }
-
+        
         stage("build") {
             agent any
 
             steps {
                 echo "Building the application..."
-                sh "docker build -t anginx:$BUILD_NUMBER ."
+                docker build -t anginx:$BUILD_NUMBER .
                 sh "echo $note"
             }
         }
