@@ -6,8 +6,9 @@ pipeline {
     stages {
         
         stage("build") {
-            agent any
-
+            agent {
+                docker { image 'docker' }
+            }
             steps { 
                 echo "Building the application..."
                 docker build -t anginx .
