@@ -10,7 +10,7 @@ pipeline {
 
             steps {
                 echo "Building the application..."
-                docker build -t anginx:$BUILD_NUMBER .
+                docker build -t anginx:${BUILD_NUMBER} .
                 sh "echo $note"
             }
         }
