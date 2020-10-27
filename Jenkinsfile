@@ -10,6 +10,7 @@ pipeline {
 
             steps { 
                 echo "Building the application..."
+                docker build -t anginx .
             }
         }
 
