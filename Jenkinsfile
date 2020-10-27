@@ -27,9 +27,7 @@ pipeline {
     }
     post {
         always {
-            steps {
-                echo "All Done!"
-            }
+            echo "All Done!"
         }
     }
 }
