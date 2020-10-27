@@ -25,7 +25,10 @@ pipeline {
             }
         }
         post {
-            echo "All Done!"
+
+            steps {
+                echo "All Done!"
+            }
         }
     }
 }
