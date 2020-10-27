@@ -24,8 +24,9 @@ pipeline {
                 echo "deploying the application..."
             }
         }
-        post {
-
+    }
+    post {
+        always {
             steps {
                 echo "All Done!"
             }
