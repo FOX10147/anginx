@@ -6,10 +6,11 @@ pipeline {
     stages {
 
         stage("build") {
-            agent { dockerfile true }
+            agent any
 
             steps {
                 echo "Building the application..."
+                sh "docker build -t anginx:$BUILD_NUMBER ."
                 sh "echo $note"
             }
         }
