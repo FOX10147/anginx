@@ -8,9 +8,9 @@ pipeline {
         stage("build") {
             agent any
 
-            steps { |
+            steps { 
                 echo "Building the application..."
-                docker build -t "anginx:$BUILD_NUMBER" .
+                docker build -t "anginx:9" .
                 echo "$note"
             }
         }
