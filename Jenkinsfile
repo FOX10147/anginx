@@ -4,6 +4,11 @@ pipeline {
     agent none
 
     stages {
+        stage("Install Dependencies") {
+            steps {
+                sh 'install npm'
+            }
+        }
 
         stage("build") {
             agent any
