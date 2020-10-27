@@ -1,12 +1,11 @@
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
     
-    agent none
+    agent { dockerfile true }
 
     stages {
 
         stage("build") {
-            agent { dockerfile true }
 
             steps {
                 echo "Building the application..."
@@ -15,15 +14,13 @@ pipeline {
         }
 
         stage("Test") {
-            agent any
-
+        
             steps {
                 echo "Testing the application..."
             }
         }
 
         stage("Deploy") {
-            agent any
             
             steps {
                 echo "deploying the application..."
