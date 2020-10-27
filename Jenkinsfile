@@ -10,8 +10,8 @@ pipeline {
                 docker { image 'docker' }
             }
             steps { 
-                echo "Building the application..."
-                docker build -t anginx .
+                sh 'echo "Building the application..."'
+                sh 'docker build -t anginx .'
             }
         }
 
