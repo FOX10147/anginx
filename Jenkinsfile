@@ -1,3 +1,4 @@
+//Jenkinsfile (Declarative Pipeline)
 pipeline {
     
     agent none
@@ -5,10 +6,11 @@ pipeline {
     stages {
 
         stage("build") {
-            agent any
+            agent { dockerfile true }
 
             steps {
                 echo "Building the application..."
+                sh "echo $note"
             }
         }
 
