@@ -10,7 +10,7 @@ pipeline {
 
             steps { 
                 echo "Building the application..."
-                docker build -t "anginx:9" .
+                docker build -t 'anginx' .
                 echo "$note"
             }
         }
