@@ -37,14 +37,14 @@ pipeline {
         }
 
         stage("Deploy") {
-            agent {
-                docker { image 'fox10147/kubectl' }
+            agent any
+                //docker { image 'fox10147/kubectl' }
             
             steps {
                 echo "deploying the application..."
-                 withKubeConfig([credentialsId: 'kubectl-creds', serverUrl: 'https://kubernetes.docker.internal:6443']) {
-                    sh 'kubectl apply -f kubernetes.yml'
-                    sh 'kubectl rollout restart deployment/fox10147/anginx:latest'
+                // withKubeConfig([credentialsId: 'kubectl-creds', serverUrl: 'https://kubernetes.docker.internal:6443']) {
+                //    sh 'kubectl apply -f kubernetes.yml'
+                //    sh 'kubectl rollout restart deployment/fox10147/anginx:latest'
             }
         }
     }
