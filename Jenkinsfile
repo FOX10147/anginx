@@ -6,10 +6,13 @@ pipeline {
     stages {
         
         stage("build") {
-            agent any
-            
+            agent {
+                docker { image 'docker' }
+            }
+
             steps { 
                 sh 'echo "Building the application..."'
+                sh "docker build -t fox10147/anginx:latest ."
             }
         }
 
