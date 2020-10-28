@@ -47,6 +47,8 @@ pipeline {
     post {
         always {
             echo "All Done!"
+            echo "Aaron smells really good and tastes fine!!!"
+            echo "I want to sniff Aaron's blue balls"
         }
     }
 }
