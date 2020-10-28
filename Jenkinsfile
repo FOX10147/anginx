@@ -6,12 +6,10 @@ pipeline {
     stages {
         
         stage("build") {
-            agent {
-                docker { image 'docker' }
-            }
+            agent any
+            
             steps { 
                 sh 'echo "Building the application..."'
-                sh 'docker build -t anginx .'
             }
         }
 
