@@ -16,6 +16,18 @@ pipeline {
             }
         }
 
+        stage("docker push") {
+            agent {
+                docker { image 'docker' }
+            }
+
+            steps {
+                withDockerRegistry([credentialsId: 'dockerlogin', url: '']) {
+                    sh 'docker push fox10147/anginx:latest'
+                }
+            }
+        }
+
         stage("Test") {
             agent any
         
